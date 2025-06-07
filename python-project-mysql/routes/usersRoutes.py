@@ -41,3 +41,8 @@ def login():
             return render_template("login.html", error="Invalid email or password.")
 
     return render_template("login.html")
+
+@users_bp.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
