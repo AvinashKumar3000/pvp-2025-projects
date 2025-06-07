@@ -12,6 +12,8 @@ CREATE TABLE users (
 CREATE TABLE items (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
+    desc VARCHAR(300),
+    category VARCHAR(200),
     price FLOAT,
     stock INT
 );
