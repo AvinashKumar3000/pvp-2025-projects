@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="space-y-8">
+
+    <!-- Welcome Header -->
+    <section class="text-center">
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-2">Welcome to My E-Commerce Website</h2>
+        <p class="text-gray-600 max-w-xl mx-auto">
+            Discover the best products, amazing deals, and fast delivery — all at your fingertips.
+        </p>
+        <a href="/items"
+            class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition">
+            Shop Now <i class="fas fa-shopping-bag ml-2"></i>
+        </a>
+    </section>
+
+    <!-- Featured Categories -->
+    <section>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Featured Categories</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div
+                class="bg-white/30 backdrop-blur-md rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer">
+                <i class="fas fa-mobile-alt text-4xl text-blue-500 mb-4"></i>
+                <h4 class="font-semibold text-lg">Electronics</h4>
+                <p class="text-gray-600">Latest gadgets and accessories to keep you connected.</p>
+            </div>
+            <div
+                class="bg-white/30 backdrop-blur-md rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer">
+                <i class="fas fa-tshirt text-4xl text-green-500 mb-4"></i>
+                <h4 class="font-semibold text-lg">Apparel</h4>
+                <p class="text-gray-600">Trendy clothing and fashion for every season.</p>
+            </div>
+            <div
+                class="bg-white/30 backdrop-blur-md rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer">
+                <i class="fas fa-home text-4xl text-yellow-500 mb-4"></i>
+                <h4 class="font-semibold text-lg">Home & Living</h4>
+                <p class="text-gray-600">Essentials and decor to make your house a home.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Products -->
+    <section>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Popular Products</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <!-- Sample product card -->
+            <div class="bg-white/30 backdrop-blur-md rounded-xl p-4 shadow-md hover:shadow-lg transition">
+                <div class="h-56 bg-gray-200 rounded-md mb-4 bg-center bg-no-repeat bg-cover"
+                    style="background-image: url('{{ url_for('static', filename='assets/home-wireless-headphones.jpeg') }}');">
+                </div>
+                <h4 class="font-semibold text-lg">Wireless Headphones</h4>
+                <p class="text-blue-600 font-bold mt-1">Less than ₹2999</p>
+            </div>
+
+            <div class="bg-white/30 backdrop-blur-md rounded-xl p-4 shadow-md hover:shadow-lg transition">
+                <div class="h-56 bg-gray-200 rounded-md mb-4 bg-center bg-no-repeat bg-cover"
+                    style="background-image: url('{{ url_for('static', filename='assets/home-casual-t-shirt.jpg') }}');">
+                </div>
+                <h4 class="font-semibold text-lg">Casual t shirt</h4>
+                <p class="text-blue-600 font-bold mt-1">More affordable</p>
+            </div>
+
+            <div class="bg-white/30 backdrop-blur-md rounded-xl p-4 shadow-md hover:shadow-lg transition">
+                <div class="h-56 bg-gray-200 rounded-md mb-4 bg-center bg-no-repeat bg-cover"
+                    style="background-image: url('{{ url_for('static', filename='assets/home-shoes.webp') }}');">
+                </div>
+                <h4 class="font-semibold text-lg">Shoes</h4>
+                <p class="text-blue-600 font-bold mt-1">best sale price</p>
+            </div>
+
+        </div>
+    </section>
+
+   <!-- Footer -->
+<footer class="bg-white/30 backdrop-blur-md mt-16 py-10 px-6 rounded-t-xl shadow-inner text-gray-700">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- About Section -->
+    <div>
+      <h4 class="text-lg font-bold mb-3">About Us</h4>
+      <p class="text-sm text-gray-600">
+        We’re a premium e-commerce platform offering the best deals on electronics, apparel, home decor, and more.
+        Trusted by thousands of happy customers.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-lg font-bold mb-3">Quick Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/" class="hover:underline">Home</a></li>
+        <li><a href="/items" class="hover:underline">Shop</a></li>
+        <li><a href="/cart/1" class="hover:underline">My Cart</a></li>
+        <li><a href="/login" class="hover:underline">Login</a></li>
+        <li><a href="/register" class="hover:underline">Register</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h4 class="text-lg font-bold mb-3">Connect With Us</h4>
+      <div class="flex space-x-4 text-xl text-gray-600">
+        <a href="https://www.instagram.com/avinash_kumar_m4/" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="hover:text-green-500"><i class="fab fa-whatsapp"></i></a>
+      </div>
+
+      <p class="text-sm text-gray-500 mt-4">
+        © 2025 <a href="https://www.mviiitech.com">MVIII TECH (OPC) Pvt Ltd</a> E-Commerce. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+</div>
+{% endblock %}

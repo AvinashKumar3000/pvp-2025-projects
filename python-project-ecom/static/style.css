@@ -5,3 +5,8 @@ body {
 nav a {
     margin-right: 10px;
 }
+
+img {
+    height: inherit;
+    width: inherit;
+}
