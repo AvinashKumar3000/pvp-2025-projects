@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html{
+        scroll-behavior: smooth;
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in-out both;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 shadow-md border-b bg-white sticky top-0 z-50 fade-in">
+    <h1 class="text-2xl font-bold text-blue-600">SocialVerse</h1>
+    <nav class="space-x-6">
+      <a href="#" class="hover:text-blue-600 transition duration-300">Home</a>
+      <a href="#features" class="hover:text-blue-600 transition duration-300">Features</a>
+      <a href="/login" class="hover:text-blue-600 transition duration-300">Login</a>
+      <a href="/register"
+        class="bg-blue-600 text-white px-4 py-2 rounded font-semibold shadow hover:bg-blue-700 transition duration-300">
+        Sign Up
+      </a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="min-h-[70vh] flex flex-col md:flex-row items-center justify-center px-10 py-12 bg-gray-50 fade-in">
+    <div class="md:w-1/2 space-y-6">
+      <h2 class="text-4xl font-bold">Connect. Share. Discover.</h2>
+      <p class="text-gray-600">Join SocialVerse, a clean and modern social platform. Post your thoughts, follow others, and explore a positive community.</p>
+      <a href="/login"
+        class="inline-block mt-4 bg-blue-600 text-white font-bold px-6 py-3 rounded shadow hover:bg-blue-700 transition duration-300">
+        Get Started
+      </a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-16 px-10 bg-white fade-in">
+    <h2 class="text-3xl font-bold text-center mb-10">Features</h2>
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div
+        class="p-6 rounded border shadow hover:shadow-lg transition duration-300 bg-white cursor-default hover:scale-[1.02]">
+        <i class="fas fa-photo-film fa-2x text-blue-600 mb-4"></i>
+        <h3 class="text-xl font-semibold">Media Posts</h3>
+        <p class="text-gray-600">Share your images and captions effortlessly.</p>
+      </div>
+      <div
+        class="p-6 rounded border shadow hover:shadow-lg transition duration-300 bg-white cursor-default hover:scale-[1.02]">
+        <i class="fas fa-user-group fa-2x text-blue-600 mb-4"></i>
+        <h3 class="text-xl font-semibold">Follow & Connect</h3>
+        <p class="text-gray-600">Find friends, follow users, and grow your network.</p>
+      </div>
+      <div
+        class="p-6 rounded border shadow hover:shadow-lg transition duration-300 bg-white cursor-default hover:scale-[1.02]">
+        <i class="fas fa-lock fa-2x text-blue-600 mb-4"></i>
+        <h3 class="text-xl font-semibold">Privacy Settings</h3>
+        <p class="text-gray-600">Control who sees your posts with easy privacy tools.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 px-10 bg-gray-100 fade-in">
+    <h2 class="text-3xl font-bold text-center mb-10">What Our Users Say</h2>
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div class="p-6 rounded border bg-white shadow hover:shadow-lg transition duration-300">
+        <p class="italic text-gray-700">"I love the simplicity of the platform. Everything just works!"</p>
+        <p class="mt-2 font-medium text-blue-600">– Alex, Creator</p>
+      </div>
+      <div class="p-6 rounded border bg-white shadow hover:shadow-lg transition duration-300">
+        <p class="italic text-gray-700">"Easy to post, easy to connect. Great job!"</p>
+        <p class="mt-2 font-medium text-blue-600">– Priya, Photographer</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 text-gray-600 text-sm p-6 text-center border-t fade-in">
+    <p>&copy; 2025 MVIII TECH (OPC) Pvt Ltd. All rights reserved.</p>
+    <div class="mt-2 space-x-4">
+      <a href="#"><i class="fab fa-facebook-f hover:text-blue-600"></i></a>
+      <a href="#"><i class="fab fa-twitter hover:text-blue-600"></i></a>
+      <a href="#"><i class="fab fa-instagram hover:text-blue-600"></i></a>
+    </div>
+  </footer>
+
+</body>
+
+</html>

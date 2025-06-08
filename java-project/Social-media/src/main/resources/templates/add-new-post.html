@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Add New Post</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.8s ease-out both;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <div class="min-h-screen flex items-center justify-center p-8 fade-in">
+    <form th:action="@{/posts/add/{userId}(userId=${userId})}" method="post" class="bg-white rounded-xl shadow-md p-10 w-full max-w-lg space-y-6">
+      <h2 class="text-2xl font-bold text-center text-blue-700">Add New Post</h2>
+
+      <!-- Image URL -->
+      <div>
+        <label for="imageUrl" class="block text-sm font-medium text-gray-600 mb-1">Image URL</label>
+        <input type="text" id="imageUrl" name="imageUrl" required
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300">
+      </div>
+
+      <!-- Description -->
+      <div>
+        <label for="description" class="block text-sm font-medium text-gray-600 mb-1">Description</label>
+        <textarea id="description" name="description" rows="4" required
+          class="w-full border border-gray-300 rounded-md px-4 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-300"></textarea>
+      </div>
+
+      <!-- Is Public -->
+      <div class="flex items-center space-x-2">
+        <input type="checkbox" id="isPublic" name="isPublic"
+          class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+        <label for="isPublic" class="text-sm text-gray-700 font-medium">Make this post public</label>
+      </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md transition duration-200 font-semibold">
+          <i class="fas fa-plus mr-2"></i> Add Post
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
