@@ -60,7 +60,7 @@ def add_item():
         cursor.close()
         conn.close()
 
-        return redirect(url_for('items'))  # or wherever you want to redirect after adding
+        return redirect(url_for('index'))  # or wherever you want to redirect after adding
 
     # GET request - show form with categories
     return render_template('add_to_item.html', categories=CATEGORIES)
