@@ -41,7 +41,7 @@ https://github.com/AvinashKumar3000/pvp-2025-projects
 ## Update your mysql password
 
 - Open `db.py` file.
-- Update `username` and `password` of your mysql db.
+- Update `user` and `password` of your mysql db.
 
 - Open your terminal `View > terminal`,
 - WINDOWS : 1. `py -m venv python-env` 2. `python-env\Scripts\activate` 3. `pip install -r requirements.txt` 4. `python app.py`
