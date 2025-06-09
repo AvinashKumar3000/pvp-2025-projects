@@ -41,14 +41,18 @@ public class PostController {
     }
 
     @PostMapping("/add/{userId}")
-    public String addPost(@ModelAttribute Post post, @PathVariable Long userId) {
+    public String addPost(
+            @PathVariable Long userId,
+            @RequestParam String imageUrl,
+            @RequestParam String description,
+            @RequestParam(defaultValue = "false") boolean isPublic
+    ) {
         User user = userService.findUserById(userId);
         if (user == null) {
             return "redirect:/login";
         }
-
-        post.setUser(user);
-        postService.createPost(post);
+        Post newPost = new Post(userId, imageUrl, description, isPublic, user);
+        postService.createPost(newPost);
         return "redirect:/posts/public/all/" + userId.toString();
     }
 }
