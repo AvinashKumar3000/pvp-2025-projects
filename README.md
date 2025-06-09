@@ -72,7 +72,7 @@ https://github.com/AvinashKumar3000/pvp-2025-projects
 - Make sure you opened your `project correctly`
   - Your top title will be `python-project-ecom (sqlite3)`
 
-## Update your mysql password
+## follow below commmands
 
 - Open your terminal `View > terminal`,
 - WINDOWS :
