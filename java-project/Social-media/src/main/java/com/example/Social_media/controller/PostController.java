@@ -51,7 +51,11 @@ public class PostController {
         if (user == null) {
             return "redirect:/login";
         }
-        Post newPost = new Post(userId, imageUrl, description, isPublic, user);
+        Post newPost = new Post();
+        newPost.setUser(user);
+        newPost.setDescription(description);
+        newPost.setPublic(isPublic);
+        newPost.setImageUrl(imageUrl);
         postService.createPost(newPost);
         return "redirect:/posts/public/all/" + userId.toString();
     }
