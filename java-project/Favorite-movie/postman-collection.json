@@ -1,0 +1,221 @@
+{
+  "info": {
+    "name": "VSProject API",
+    "_postman_id": "0e1e7c58-63c5-4db2-a1fa-54321example",
+    "description": "Postman collection for testing User and Movie controllers.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User APIs",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"avi\",\n  \"password\": \"test123\",\n  \"email\": \"avi@example.com\",\n  \"age\": 25\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/user/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user", "register"]
+            }
+          }
+        },
+        {
+          "name": "Login User",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:8080/user/login?email=avi@example.com&password=test123",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user", "login"],
+              "query": [
+                { "key": "email", "value": "avi@example.com" },
+                { "key": "password", "value": "test123" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/user/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get User by Username",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/user/by-username/avi",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user", "by-username", "avi"]
+            }
+          }
+        },
+        {
+          "name": "Get User by Email",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/user/by-email/avi@example.com",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user", "by-email", "avi@example.com"]
+            }
+          }
+        },
+        {
+          "name": "Add Favorite Movie",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:8080/user/1/favorite/2",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user", "1", "favorite", "2"]
+            }
+          }
+        },
+        {
+          "name": "Remove Favorite Movie",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/user/1/favorite/2",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user", "1", "favorite", "2"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Movie APIs",
+      "item": [
+        {
+          "name": "Get All Movies",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/movie/all",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["movie", "all"]
+            }
+          }
+        },
+        {
+          "name": "Get Movie by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/movie/by/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["movie", "by", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Movies Under Year",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/movie/under/year/2020",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["movie", "under", "year", "2020"]
+            }
+          }
+        },
+        {
+          "name": "Get Movies by Category",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/movie/category/Action",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["movie", "category", "Action"]
+            }
+          }
+        },
+        {
+          "name": "Add Movie",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": 2010,\n  \"category\": \"Sci-Fi\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/movie/add",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["movie", "add"]
+            }
+          }
+        },
+        {
+          "name": "Update Movie",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"Interstellar\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": 2014,\n  \"category\": \"Sci-Fi\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/movie/update",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["movie", "update"]
+            }
+          }
+        },
+        {
+          "name": "Delete Movie",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/movie/delete/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["movie", "delete", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

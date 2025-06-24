@@ -26,11 +26,37 @@ public class UserService {
     }
 
     public User findByUsernameAndPass(String username, String password) {
-        return userRepository.findByUsernameAndPassword(username, password)
-                .orElse(null);
+        List<User> allUsers = userRepository.findAll();
+        User foundUser = null;
+        for(User user: allUsers) {
+            if(user.getUsername() == username && user.getPassword() == password) {
+                foundUser = user;
+                break;
+            }
+        }
+        return foundUser;
     }
 
     public User findUserById(Long userId) {
         return userRepository.findById(userId).orElse(null);
     }
+
+    public String resetPassword(Long userId, String newPassword) {
+        User foundUser = userRepository.findById(userId).orElse(null);
+        if(foundUser==null) {
+            return "no user found";
+        }else{
+            foundUser.setPassword(newPassword);
+            return "password reset Done";
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
