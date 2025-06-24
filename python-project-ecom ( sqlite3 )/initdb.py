@@ -1,7 +1,7 @@
 import sqlite3
 
 def init_db():
-    conn = sqlite3.connect('ecommerce.db')
+    conn = sqlite3.connect('songs.db')
     cursor = conn.cursor()
 
     # Create users table
@@ -16,15 +16,15 @@ def init_db():
 
     # Create items table
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS items (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT,
-            about TEXT,
-            category TEXT,
-            price REAL,
-            stock INTEGER,
-            image_url TEXT
-        )
+    CREATE TABLE IF NOT EXISTS songs (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        artist TEXT NOT NULL,
+        album TEXT,
+        genre TEXT NOT NULL,
+        release_year INTEGER,
+        cover_url TEXT
+    )
     """)
 
     # Create cart table

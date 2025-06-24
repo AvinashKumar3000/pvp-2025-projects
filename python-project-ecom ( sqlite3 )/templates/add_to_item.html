@@ -1,51 +1,62 @@
 {% extends "base.html" %}
-{% block title %}Add New Item{% endblock %}
+{% block title %}Add New Song{% endblock %}
 
 {% block content %}
-<div class="max-w-3xl mx-auto px-4 py-10">
-  <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Add New Item</h2>
+<div class="max-w-3xl mx-auto px-4 py-10 bg-gray-900 min-h-screen text-gray-100">
+       <h2 class="text-3xl font-bold text-white mb-8 text-center">🎵 Add New Song</h2>
 
-  <form method="POST" action="/items/add" class="bg-white/30 backdrop-blur-md p-6 rounded-2xl shadow-lg max-w-lg mx-auto">
-    
-    <!-- Item Name -->
-    <label for="name" class="block text-gray-700 font-semibold mb-2">Item Name</label>
-    <input type="text" name="name" id="name" required
-           class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" />
-    
-    <!-- About -->
-    <label for="about" class="block text-gray-700 font-semibold mb-2">Description</label>
-    <textarea name="about" id="about" rows="3"
-              class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
-              placeholder="Describe the item..."></textarea>
-    
-    <!-- Category Dropdown -->
-    <label for="category" class="block text-gray-700 font-semibold mb-2">Category</label>
-    <select name="category" id="category" required
-            class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4">
-      {% for category in categories %}
-      <option value="{{ category }}">{{ category }}</option>
-      {% endfor %}
-    </select>
-    
-    <!-- Price -->
-    <label for="price" class="block text-gray-700 font-semibold mb-2">Price (₹)</label>
-    <input type="number" min="0" step="0.01" name="price" id="price" required
-           class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" />
-    
-    <!-- Stock -->
-    <label for="stock" class="block text-gray-700 font-semibold mb-2">Stock Quantity</label>
-    <input type="number" min="0" name="stock" id="stock" required
-           class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-6" />
-    
-    <!-- Image URL -->
-    <label for="image_url" class="block text-gray-700 font-semibold mb-2">Image URL</label>
-    <input type="url" name="image_url" id="image_url" placeholder="https://example.com/image.jpg"
-           class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-6" />
-    
-    <!-- Submit Button -->
-    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition">
-      Add Item
-    </button>
-  </form>
+       <form method="POST" action="/items/add"
+              class="bg-gray-800/60 backdrop-blur-md p-6 rounded-2xl shadow-lg max-w-lg mx-auto">
+
+              <!-- Song Name -->
+              <label for="title" class="block text-gray-200 font-semibold mb-2">Song Title</label>
+              <input type="text" name="title" id="title" required
+                     class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+                     placeholder="Enter song title" />
+
+              <!-- Artist -->
+              <label for="artist" class="block text-gray-200 font-semibold mb-2">Artist</label>
+              <input type="text" name="artist" id="artist" required
+                     class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+                     placeholder="Enter artist name" />
+
+              <!-- Album -->
+              <label for="album" class="block text-gray-200 font-semibold mb-2">Album</label>
+              <input type="text" name="album" id="album"
+                     class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+                     placeholder="Enter album name (optional)" />
+              <!-- Genre Dropdown -->
+              <label for="genre" class="block text-gray-200 font-semibold mb-2">Genre</label>
+              <select name="genre" id="genre" required
+                     class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4">
+                     <option value="Pop" class="text-gray-900">Pop</option>
+                     <option value="Hip-Hop" class="text-gray-900">Hip-Hop</option>
+                     <option value="Electronic" class="text-gray-900">Electronic</option>
+                     <option value="Jazz" class="text-gray-900">Jazz</option>
+                     <option value="Classical" class="text-gray-900">Classical</option>
+                     <option value="Metal" class="text-gray-900">Metal</option>
+                     <option value="Folk" class="text-gray-900">Folk</option>
+                     <option value="K-Pop" class="text-gray-900">K-Pop</option>
+                     <option value="Lo-fi" class="text-gray-900">Lo-fi</option>
+              </select>
+
+
+              <!-- Release Year -->
+              <label for="release_year" class="block text-gray-200 font-semibold mb-2">Release Year</label>
+              <input type="number" min="1900" max="2099" name="release_year" id="release_year"
+                     class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+                     placeholder="Eg: 2024" />
+
+              <!-- Cover Image URL -->
+              <label for="cover_url" class="block text-gray-200 font-semibold mb-2">Cover Image URL</label>
+              <input type="url" name="cover_url" id="cover_url" placeholder="https://example.com/cover.jpg"
+                     class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-6" />
+
+              <!-- Submit Button -->
+              <button type="submit"
+                     class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition">
+                     Add Song
+              </button>
+       </form>
 </div>
 {% endblock %}

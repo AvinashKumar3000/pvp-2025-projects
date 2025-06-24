@@ -11,51 +11,41 @@ def show_items():
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
 
-    cursor.execute("SELECT * FROM items")
-    items = cursor.fetchall()
+    cursor.execute("SELECT * FROM songs")
+    songs = cursor.fetchall()
 
-    # Group items by category
-    grouped_items = defaultdict(list)
-    for item in items:
-        grouped_items[item['category']].append(item)
+    # Group songs by genre
+    grouped_songs = defaultdict(list)
+    for song in songs:
+        grouped_songs[song['genre']].append(song)
 
-    item_categories = {}
-    for k in grouped_items.keys():
-        item_categories[k] = len(grouped_items[k])
+    # Count songs in each genre
+    genre_counts = {genre: len(group) for genre, group in grouped_songs.items()}
 
     cursor.close()
     conn.close()
 
-    return render_template("items.html", grouped_items=grouped_items, item_categories=item_categories)
-
-# Predefined categories list
-CATEGORIES = [
-    'Fruits', 
-    'Vegetables', 
-    'Dairy', 
-    'Beverages', 
-    'Snacks',
-    "Books",
-    "Grocery",
-    "Fashion",
-    "Electronics",
-]
+    return render_template(
+        "items.html",  # Make sure your template file is renamed to match
+        grouped_songs=grouped_songs,
+        genre_counts=genre_counts
+    )
 
 @items_bp.route('/items/add', methods=['GET', 'POST'])
-def add_item():
+def add_song():
     if request.method == 'POST':
-        name = request.form['name']
-        about = request.form.get('about', '')
-        category = request.form['category']
-        price = request.form['price']
-        stock = request.form['stock']
-        image_url = request.form.get('image_url', '')
+        title = request.form['title']
+        artist = request.form['artist']
+        album = request.form.get('album', '')
+        genre = request.form['genre']
+        release_year = request.form['release_year']
+        cover_url = request.form.get('cover_url', '')
 
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute(
-            "INSERT INTO items (name, about, category, price, stock, image_url) VALUES (?, ?, ?, ?, ?, ?)",
-            (name, about, category, price, stock, image_url)
+            "INSERT INTO songs (title, artist, album, genre, release_year, cover_url) VALUES (?, ?, ?, ?, ?, ?)",
+            (title, artist, album, genre, release_year, cover_url)
         )
         conn.commit()
         cursor.close()
@@ -63,4 +53,4 @@ def add_item():
 
         return redirect(url_for('index'))  # adjust to your home route
 
-    return render_template('add_to_item.html', categories=CATEGORIES)
+    return render_template('add_to_item.html')

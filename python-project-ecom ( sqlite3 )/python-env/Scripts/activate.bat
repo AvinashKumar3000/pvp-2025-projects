@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=E:\pvp\pvp-2025-projects\python-project-ecom ( sqlite3 )\python-env
+set VIRTUAL_ENV=C:\Users\AVI\Downloads\pvp-2025-projects-main\pvp-2025-projects-main\python-project-ecom ( sqlite3 )\python-env
 
 if not defined PROMPT set PROMPT=$P$G
 

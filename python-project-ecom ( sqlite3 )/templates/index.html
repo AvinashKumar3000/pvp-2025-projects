@@ -1,88 +1,85 @@
 {% extends "base.html" %}
-{% block title %}Home{% endblock %}
+{% block title %}Melody Archive{% endblock %}
 
 {% block content %}
 <div class="space-y-8">
 
     <!-- Welcome Header -->
     <section class="text-center">
-        <h2 class="text-4xl font-extrabold text-gray-800 mb-2">Welcome to My E-Commerce Website</h2>
-        <p class="text-gray-600 max-w-xl mx-auto">
-            Discover the best products, amazing deals, and fast delivery — all at your fingertips.
+        <h2 class="text-4xl font-extrabold text-red-800 mb-2">Welcome to Melody Archive 🎶</h2>
+        <p class="text-gray-300 max-w-xl mx-auto">
+            Store, explore, and manage your favorite songs with ease. Your personal digital song collection.
         </p>
-        <a href="/items"
-            class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition">
-            Shop Now <i class="fas fa-shopping-bag ml-2"></i>
+        <a href="/songs"
+           class="inline-block mt-6 px-6 py-3 bg-lime-600 font-bold text-black rounded-lg shadow-lg hover:bg-lime-200 transition">
+            Explore Songs <i class="fas fa-music ml-2"></i>
         </a>
     </section>
 
-    <!-- Featured Categories -->
+    <!-- Featured Genres -->
     <section>
-        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Featured Categories</h3>
+        <h3 class="text-2xl font-semibold text-lime-300 mb-4">Featured Genres</h3>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div
-                class="bg-white/30 backdrop-blur-md rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer">
-                <i class="fas fa-mobile-alt text-4xl text-blue-500 mb-4"></i>
-                <h4 class="font-semibold text-lg">Electronics</h4>
-                <p class="text-gray-600">Latest gadgets and accessories to keep you connected.</p>
+            <div class="bg-black/30 backdrop-blur-md rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer">
+                <i class="fas fa-guitar text-4xl text-red-500 mb-4"></i>
+                <h4 class="font-semibold text-lg">Rock</h4>
+                <p class="text-gray-300">Classic to modern rock anthems curated just for you.</p>
             </div>
-            <div
-                class="bg-white/30 backdrop-blur-md rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer">
-                <i class="fas fa-tshirt text-4xl text-green-500 mb-4"></i>
-                <h4 class="font-semibold text-lg">Apparel</h4>
-                <p class="text-gray-600">Trendy clothing and fashion for every season.</p>
+            <div class="bg-black/30 backdrop-blur-md rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer">
+                <i class="fas fa-headphones text-4xl text-purple-500 mb-4"></i>
+                <h4 class="font-semibold text-lg">Pop</h4>
+                <p class="text-gray-300">Catchy tunes and chart-toppers from every era.</p>
             </div>
-            <div
-                class="bg-white/30 backdrop-blur-md rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer">
-                <i class="fas fa-home text-4xl text-yellow-500 mb-4"></i>
-                <h4 class="font-semibold text-lg">Home & Living</h4>
-                <p class="text-gray-600">Essentials and decor to make your house a home.</p>
+            <div class="bg-black/30 backdrop-blur-md rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer">
+                <i class="fas fa-drum-steelpan text-4xl text-green-500 mb-4"></i>
+                <h4 class="font-semibold text-lg">Classical</h4>
+                <p class="text-gray-300">Timeless melodies and traditional masterpieces.</p>
             </div>
         </div>
     </section>
 
-    <!-- Popular Products -->
+    <!-- Popular Songs -->
     <section>
-        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Popular Products</h3>
+        <h3 class="text-2xl font-semibold text-lime-300 mb-4">Popular Songs</h3>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <!-- Sample product card -->
-            <div class="bg-white/30 backdrop-blur-md rounded-xl p-4 shadow-md hover:shadow-lg transition">
+
+            <div class="bg-black/30 backdrop-blur-md rounded-xl p-4 shadow-md hover:shadow-lg transition">
                 <div class="h-56 bg-gray-200 rounded-md mb-4 bg-center bg-no-repeat bg-cover"
-                    style="background-image: url('{{ url_for('static', filename='assets/home-wireless-headphones.jpeg') }}');">
+                    style="background-image: url('https://c.saavncdn.com/126/Shape-of-You-English-2017-500x500.jpg');">
                 </div>
-                <h4 class="font-semibold text-lg">Wireless Headphones</h4>
-                <p class="text-blue-600 font-bold mt-1">Less than ₹2999</p>
+                <h4 class="font-semibold text-lg">Shape of You</h4>
+                <p class="text-gray-300 font-bold mt-1">Ed Sheeran</p>
             </div>
 
-            <div class="bg-white/30 backdrop-blur-md rounded-xl p-4 shadow-md hover:shadow-lg transition">
+            <div class="bg-black/30 backdrop-blur-md rounded-xl p-4 shadow-md hover:shadow-lg transition">
                 <div class="h-56 bg-gray-200 rounded-md mb-4 bg-center bg-no-repeat bg-cover"
-                    style="background-image: url('{{ url_for('static', filename='assets/home-casual-t-shirt.jpg') }}');">
+                    style="background-image: url('https://i1.sndcdn.com/artworks-kGSM1jbRKJjhbMMh-hr5v6Q-t500x500.jpg');">
                 </div>
-                <h4 class="font-semibold text-lg">Casual t shirt</h4>
-                <p class="text-blue-600 font-bold mt-1">More affordable</p>
+                <h4 class="font-semibold text-lg">Blinding Lights</h4>
+                <p class="text-gray-300 font-bold mt-1">The Weeknd</p>
             </div>
 
-            <div class="bg-white/30 backdrop-blur-md rounded-xl p-4 shadow-md hover:shadow-lg transition">
+            <div class="bg-black/30 backdrop-blur-md rounded-xl p-4 shadow-md hover:shadow-lg transition">
                 <div class="h-56 bg-gray-200 rounded-md mb-4 bg-center bg-no-repeat bg-cover"
-                    style="background-image: url('{{ url_for('static', filename='assets/home-shoes.webp') }}');">
+                    style="background-image: url('https://i1.sndcdn.com/artworks-000146223825-do7bz3-t500x500.jpg');">
                 </div>
-                <h4 class="font-semibold text-lg">Shoes</h4>
-                <p class="text-blue-600 font-bold mt-1">best sale price</p>
+                <h4 class="font-semibold text-lg">Agar Tum Saath Ho</h4>
+                <p class="text-gray-300 font-bold mt-1">Arijit Singh</p>
             </div>
 
         </div>
     </section>
 
    <!-- Footer -->
-<footer class="bg-white/30 backdrop-blur-md mt-16 py-10 px-6 rounded-t-xl shadow-inner text-gray-700">
+<footer class="bg-black/30 backdrop-blur-md mt-16 py-10 px-6 rounded-t-xl shadow-inner text-gray-700">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 
     <!-- About Section -->
     <div>
-      <h4 class="text-lg font-bold mb-3">About Us</h4>
-      <p class="text-sm text-gray-600">
-        We’re a premium e-commerce platform offering the best deals on electronics, apparel, home decor, and more.
-        Trusted by thousands of happy customers.
+      <h4 class="text-lg font-bold mb-3">About Melody Archive</h4>
+      <p class="text-sm text-gray-300">
+        Melody Archive is your digital space to store and organize your favorite songs across genres and eras. 
+        A personalized platform for music lovers.
       </p>
     </div>
 
@@ -91,8 +88,8 @@
       <h4 class="text-lg font-bold mb-3">Quick Links</h4>
       <ul class="space-y-2 text-sm">
         <li><a href="/" class="hover:underline">Home</a></li>
-        <li><a href="/items" class="hover:underline">Shop</a></li>
-        <li><a href="/cart/1" class="hover:underline">My Cart</a></li>
+        <li><a href="/songs" class="hover:underline">Browse Songs</a></li>
+        <li><a href="/favorites" class="hover:underline">My Favorites</a></li>
         <li><a href="/login" class="hover:underline">Login</a></li>
         <li><a href="/register" class="hover:underline">Register</a></li>
       </ul>
@@ -108,12 +105,11 @@
       </div>
 
       <p class="text-sm text-gray-500 mt-4">
-        © 2025 <a href="https://www.mviiitech.com">MVIII TECH (OPC) Pvt Ltd</a> E-Commerce. All rights reserved.
+        © 2025 <a href="https://www.mviiitech.com">MVIII TECH (OPC) Pvt Ltd</a> — Melody Archive. All rights reserved.
       </p>
     </div>
   </div>
 </footer>
-
 
 </div>
 {% endblock %}

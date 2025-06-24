@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>{% block title %}E-Commerce{% endblock %}</title>
-    <link rel="shortcut icon" href="https://www.ecomexpress.in/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://png.pngtree.com/png-vector/20231116/ourmid/pngtree-music-icon-stereo-png-image_10540378.png" type="image/x-icon">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -21,29 +21,29 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 
-<body class="bg-gradient-to-br from-gray-100 to-gray-300 min-h-screen font-sans">
+<body class="bg-gradient-to-br from-gray-900 to-gray-600 text-white min-h-screen font-sans">
 
     <!-- Navigation -->
     <nav
-        class="bg-white/30 backdrop-blur-md shadow-md sticky top-0 z-50 p-4 rounded-b-xl mx-auto max-w-4xl mt-4"
+        class="bg-black/30 backdrop-blur-md shadow-md sticky top-0 z-50 p-4 rounded-b-xl mx-auto max-w-4xl mt-4"
         role="navigation"
         aria-label="Main navigation"
     >
-        <div class="flex flex-wrap justify-between items-center text-gray-800">
+        <div class="flex flex-wrap justify-between items-center text-gray-200">
             <div class="space-x-4">
-                <a href="/" class="hover:text-blue-600 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400" aria-label="Home">
-                    <i class="fas fa-home"></i> Home
+                <a href="/" class="hover:text-lime-300 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400" aria-label="Home">
+                    <i class="text-lime-500 fas fa-home"></i> Melody
                 </a>
                 
-                <a href="/items" class="hover:text-blue-600 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400" aria-label="Items">
-                    <i class="fas fa-boxes"></i> Items
+                <a href="/items" class="hover:text-lime-300 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400" aria-label="Items">
+                    <i class="text-lime-500 fas fa-music"></i> Musics
                 </a>
                 {% if session.get('user_id') %}
-                <a href="/cart/{{ session.user_id }}" class="hover:text-blue-600 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400" aria-label="My Cart">
-                    <i class="fas fa-shopping-cart"></i> My Cart
+                <a href="/cart/{{ session.user_id }}" class="hover:text-lime-300 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400" aria-label="My Cart">
+                    <i class="text-lime-500 fas fa-music"></i> My Music
                 </a>
-                <a href="/items/add" class="hover:text-blue-600 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400" aria-label="Add New Items">
-                    <i class="fas fa-cart-plus"></i> Add New Items
+                <a href="/items/add" class="hover:text-lime-300 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400" aria-label="Add New Items">
+                    <i class="text-lime-500 fas fa-cart-plus"></i> Add New Music
                 </a>
                 {% endif %}
             </div>
@@ -51,7 +51,7 @@
             <div class="space-x-4">
                 {% if session.get('user_id') %}
                 <span class="font-semibold text-sm">👋 Welcome, {{ session.username }}</span>
-                <a href="/logout" class="text-red-500 hover:underline focus:outline-none focus:ring-2 focus:ring-red-400" aria-label="Logout">
+                <a href="/logout" class="bg-red-900 text-white px-5 py-1 rounded-lg text-red-800 hover:underline focus:outline-none focus:ring-2 focus:ring-red-400" aria-label="Logout">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </a>
                 {% else %}
@@ -68,7 +68,7 @@
 
     <!-- Main Content -->
     <main
-        class="max-w-4xl mx-auto p-6 mt-6 bg-white/40 backdrop-blur-md shadow-lg rounded-xl min-h-[70vh]"
+        class="max-w-4xl mx-auto p-6 mt-6 bg-black/40 backdrop-blur-md shadow-lg rounded-xl min-h-[70vh]"
         role="main"
     >
         {% block content %}{% endblock %}

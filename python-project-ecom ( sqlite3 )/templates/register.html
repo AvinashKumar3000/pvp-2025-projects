@@ -7,21 +7,21 @@
 
     <form method="POST" action="/register" class="space-y-4">
         <div>
-            <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+            <label for="username" class="block text-sm font-medium text-gray-200">Username</label>
             <input type="text" name="username" id="username" required
-                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70">
+                class="text-black mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70">
         </div>
 
         <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <label for="email" class="block text-sm font-medium text-gray-200">Email</label>
             <input type="email" name="email" id="email" required
-                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70">
+                class="text-black mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70">
         </div>
 
         <div>
-            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+            <label for="password" class="block text-sm font-medium text-gray-200">Password</label>
             <input type="password" name="password" id="password" required
-                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70">
+                class="text-black mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70">
         </div>
 
         <button type="submit"
@@ -30,9 +30,9 @@
         </button>
     </form>
 
-    <p class="mt-6 text-sm text-center text-gray-600">
+    <p class="mt-6 text-sm text-center text-gray-200">
         Already have an account?
-        <a href="{{ url_for('users.login') }}" class="text-blue-600 hover:underline">Login here</a>.
+        <a href="{{ url_for('users.login') }}" class="text-sky-400 text-blue-600 hover:underline">Login here</a>.
     </p>
 </div>
 {% endblock %}

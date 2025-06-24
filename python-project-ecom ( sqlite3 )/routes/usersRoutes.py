@@ -43,7 +43,7 @@ def login():
         else:
             return render_template("login.html", error="Invalid email or password.")
 
-    return render_template("login.html")
+    return render_template('login.html')
 
 
 @users_bp.route('/logout')
