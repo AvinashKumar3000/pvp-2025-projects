@@ -1,0 +1,10 @@
+<h1 class="w-fit p-2 m-auto mt-20 px-20 bg-black/50 backdrop-blur-sm rounded-sm text-white">My application</h1>
+<p class="m-50 mt-10 mb-5 font-medium">
+  The over like count : {{totalLikeCount}}
+</p>
+
+<div class="flex flex-wrap gap-2 justify-around align-top">
+  @for (movie of movieList; track $index) {
+    <app-card [movieDetail]="movie" (updateTotal)="updateTotal()"></app-card>
+  }
+</div>
