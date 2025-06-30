@@ -1,9 +1,9 @@
 <div class="w-[350px] p-10 rounded-sm shadow-md shadow-gray-400">
-  <img [src]="movie?.imageUrl" alt="image-alt-text">
+  <div class="aspect-square bg-center bg-cover" [style]="`background-image:url(${movie?.imageUrl})`" alt="image-alt-text">
   <div>{{movie?.title}}</div>
   <p>{{movie?.desc}}</p>
   <div class="flex justify-between mt-5">
     <span>{{movie?.isFavorite ? "🥰":"😑"}}</span>
-    <app-counter (incr)="updateLikeCount()"></app-counter>
+    <app-counter></app-counter>
   </div>
 </div>

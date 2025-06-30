@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { StorageService } from '../../services/storageService';
 
 @Component({
   selector: 'app-counter',
@@ -7,11 +9,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './counter.css'
 })
 export class Counter {
-  @Output() incr = new EventEmitter<void>();
+  storageService = inject(StorageService);
   count = 0;
 
   update(): void {
     this.count++;
-    this.incr.emit();
+    this.storageService.updateLike();
   }
 }

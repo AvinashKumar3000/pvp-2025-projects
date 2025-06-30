@@ -1,18 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnDestroy } from '@angular/core';
 import { Card } from '../components/card/card';
 import { Movie } from '../interfaces/MovieInterface';
-
+import { StorageService } from '../services/storageService';
+import { Subscription } from 'rxjs';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [Card]
+  imports: [Card,FormsModule]
 })
-export class App {
+export class App implements OnDestroy {
   totalLikeCount:number = 0;
   favorites:Movie[] = [];
   movieList:Movie[] = MOVIES;
+  likeSubscription: Subscription;
+  inputValue = "hello";
+
+  private storageService = inject(StorageService);
+
+  constructor() {
+    this.likeSubscription = this.storageService.like$.subscribe((data) => {
+      this.totalLikeCount = data;
+    })
+  }
 
   addToFavorite(index:number):void{
     let movie:Movie = this.movieList[index];
@@ -24,6 +36,16 @@ export class App {
     console.log("triggered");
     this.totalLikeCount++;
   }
+
+  ngOnDestroy(): void {
+      this.likeSubscription.unsubscribe();
+  }
+
+  updateValue(event: any) {
+    console.log(event.target?.value);
+    this.inputValue = event.target?.value;
+  }
+
 }
 
 const MOVIES: Movie[] = [
